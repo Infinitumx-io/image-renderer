@@ -2,7 +2,7 @@
 
 ## Usage
 
-`docker-compose up`
+`yarn` to install the dependencies and then `docker-compose up` to start the image renderer
 
 ## Speeding up
 
