@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  redis:
+    image: redis:6.2-alpine
+    ports:
+      - 6379:6379
+
+  imageRenderer:
+    image: node:17-alpine
+    working_dir: /app
+    volumes:
+      - ./:/app
+    depends_on:
+      - redis
+    command: yarn start:main
+
+  getImage:
+    image: node:17-alpine
+    working_dir: /app
+    volumes:
+      - ./:/app
+    depends_on:
+      - redis
+    command: yarn start:getImage
+
+  getData:
+    image: node:17-alpine
+    working_dir: /app
+    deploy:
+      replicas: 5
+    volumes:
+      - ./:/app
+    depends_on:
+      - redis
+    command: yarn start:getData

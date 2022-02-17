@@ -28,6 +28,10 @@
 		"skipLibCheck": true,
 		"resolveJsonModule": true,
 		"outDir": "dist",
+		"baseUrl": ".",
+        "paths": {
+			"@helpers/*": [ "./src/helpers/*" ],
+        }
     },
     "exclude": ["./node_modules/*"]
 }

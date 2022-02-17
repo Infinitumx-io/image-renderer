@@ -4,8 +4,9 @@
     "description": "Image Renderer without moderation for Infinitum X project",
     "main": "dist/src/index.js",
     "scripts": {
-        "start": "node dist/src/index.js",
-        "build": "tsc",
+        "start:main": "ts-node -r tsconfig-paths/register src/runners/main",
+        "start:getImage": "ts-node -r tsconfig-paths/register src/runners/getImage",
+        "start:getData": "ts-node -r tsconfig-paths/register src/runners/getData",
         "lint": "eslint --fix --ext .ts lib/**",
         "ci": "yarn install --frozen-lockfile"
     },
@@ -16,11 +17,8 @@
     "dependencies": {
         "axios": "^0.25.0",
         "bullmq": "^1.67.1",
-        "chalk": "^4.1.2",
         "cids": "^1.1.9",
-        "commander": "^8.3.0",
         "jimp": "^0.16.1",
-        "ora": "^3.2.0",
         "web3": "^1.7.0",
         "web3-eth-contract": "^1.7.0"
     },
@@ -38,6 +36,7 @@
         "prettier": "^2.5.1",
         "ts-node": "^10.4.0",
         "ts-node-dev": "^1.1.8",
+        "tsconfig-paths": "^3.12.0",
         "typescript": "^4.5.5"
     }
 }
